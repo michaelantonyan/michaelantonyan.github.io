@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>JavaScript Testbed</title>
+    </head>
+    <body>
+        <h1>	
+            JavaScript will find out the date and the browser.
+</h1>
+        <script type="text/javascript">
+            var currentTime = new Date();
+            var hours = currentTime.getHours();
+            var minutes = currentTime.getMinutes();
+            var seconds = currentTime.getSeconds();
+            var suffix = "AM";
+            
+            if (seconds < 10)
+                seconds = "0" + seconds;
+
+            if (minutes < 10)
+                minutes = "0" + minutes;
+
+            if (hours >= 12) {
+                suffix = "PM";
+                hours = hours - 12;
+            }
+            if (hours == 0) {
+                hours = 12;
+            }
+
+            document.write("<b><div id='d1'>" + hours + ":" + 
+                minutes + ":" + seconds + " " + suffix + "</div></b>");
+                    function hideElement(id_attribute_value) {
+			        if (document.getElementById &&
+				    document.getElementById(id_attribute_value) &&
+				    document.getElementById(id_attribute_value).style
+                    ) {
+document.getElementById(id_attribute_value).style.visibility = "hidden";
+			  }
+			}        
+        </script>
+        <button type="button" onclick="hideElement('d1');">hide div</button>
+    </body>
+
+
+        </script>
+    </body>
+</html>
